@@ -15,18 +15,39 @@ def upd(request):
 	garagemOff = 'https://visualpharm.com/assets/971/Garage%20Closed-595b40b65ba036ed117d2d56.svg'
 	alarmeOn = 'https://image.flaticon.com/icons/png/128/148/148921.png'
 	alarmeOff = 'https://image.flaticon.com/icons/png/128/149/149845.png'
+	janelaOn = 'https://image.flaticon.com/icons/png/128/1163/1163037.png'
+	janelaOff = 'https://image.flaticon.com/icons/png/128/1162/1162884.png'
 	idTag = str (request).split ('/')[1]
+		
+	#with open ("info.txt", "r") as f:
+		#state = str (f.read())
+	#state = list (state)
 
 	src = ["", ""]
 	if (idTag[0:4] == "lamp"):
 		src[0] = lampOff
 		src[1] = lampOn
+		#if (idTag == "lamp-quarto"):
+			#pos = 0
+		#elif (idTag == "lamp-cozinha"):
+			#pos = 1
+		#elif (idTag == "lamp-sala"):
+			#pos = 2
+		#elif (idTag == "lamp-garagem"):
+			#pos = 3
+		#elif (idTag == "lamp-ext"):
+			#pos = 4
 	elif (idTag == "garagem"):
 		src[0] = garagemOff
 		src[1] = garagemOn
+		#pos = 6
 	elif (idTag == "alarme"):
-		src[0] = alarmeOn
-		src[1] = alarmeOff
+		src[0] = alarmeOff
+		src[1] = alarmeOn
+	elif (idTag == "janela"):
+		src[0] = janelaOff
+		src[1] = janelaOn
+		#pos = 8
 	
 	with open ("sistema.html", "r") as f:
 		fi = str (f.read())

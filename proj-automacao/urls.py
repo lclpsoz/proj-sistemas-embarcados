@@ -21,6 +21,7 @@ urlpatterns = [
     path("lamp-ext/", proj.views.upd, name="lamp-ext"),
     path("garagem/", proj.views.upd, name="garagem"),
     path("alarme/", proj.views.upd, name="alarme"),
+    path("janela/", proj.views.upd, name="janela"),
     
     path("admin/", admin.site.urls)
 ]
